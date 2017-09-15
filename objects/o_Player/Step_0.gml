@@ -1,7 +1,7 @@
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 6C6D6AA6
-/// @DnDArgument : "code" "/// @desc Apply Movement$(13_10)image_angle -= 180$(13_10)$(13_10)// Convert microseconds to something more reasonable. :)$(13_10)dt = delta_time / 30000$(13_10)$(13_10)var deltaY = mouse_y - y$(13_10)var deltaX = x - mouse_x$(13_10)$(13_10)var targetRotation = -darctan2( deltaX,deltaY )$(13_10)$(13_10)// TODO: Change this to rotation difference check.$(13_10)if ( image_angle < targetRotation )$(13_10)	image_angle += ROT_SPEED * dt$(13_10)$(13_10)if ( image_angle > targetRotation )$(13_10)	image_angle -= ROT_SPEED * dt$(13_10)$(13_10)// image_angle = targetRotation$(13_10)$(13_10)// Move to mouse and stop when it arrives.$(13_10)if ( sqrt( ( deltaX * deltaX ) + ( deltaY * deltaY ) ) > SPEED )$(13_10){$(13_10)	x += SPEED * dsin( image_angle -   0 ) * dt$(13_10)	y -= SPEED * dcos( image_angle - 180 ) * dt$(13_10)}$(13_10)$(13_10)image_angle += 180"
+/// @DnDArgument : "code" "/// @desc Apply Movement$(13_10)image_angle -= 180$(13_10)$(13_10)// Convert microseconds to something more reasonable. :)$(13_10)dt = delta_time / 30000$(13_10)$(13_10)var deltaY = mouse_y - y$(13_10)var deltaX = x - mouse_x$(13_10)$(13_10)var targetRotation = -darctan2( deltaX,deltaY )$(13_10)$(13_10)// TODO: Make the rotation take the shortest path, always.$(13_10)$(13_10)if( image_angle < targetRotation )$(13_10){$(13_10)	image_angle += ROT_SPEED * dt$(13_10)	// show_debug_message( "yea" )$(13_10)}$(13_10)$(13_10)if( image_angle > targetRotation )$(13_10){$(13_10)	image_angle -= ROT_SPEED * dt$(13_10)	// show_debug_message( "nah" )$(13_10)}$(13_10)$(13_10)// image_angle = targetRotation$(13_10)$(13_10)// Move to mouse and stop when it arrives.$(13_10)if ( sqrt( ( deltaX * deltaX ) + ( deltaY * deltaY ) ) > SPEED )$(13_10){$(13_10)	x += SPEED * dsin( image_angle -   0 ) * dt$(13_10)	y -= SPEED * dcos( image_angle - 180 ) * dt$(13_10)}$(13_10)$(13_10)image_angle += 180"
 /// @desc Apply Movement
 image_angle -= 180
 
@@ -13,12 +13,19 @@ var deltaX = x - mouse_x
 
 var targetRotation = -darctan2( deltaX,deltaY )
 
-// TODO: Change this to rotation difference check.
-if ( image_angle < targetRotation )
-	image_angle += ROT_SPEED * dt
+// TODO: Make the rotation take the shortest path, always.
 
-if ( image_angle > targetRotation )
+if( image_angle < targetRotation )
+{
+	image_angle += ROT_SPEED * dt
+	// show_debug_message( "yea" )
+}
+
+if( image_angle > targetRotation )
+{
 	image_angle -= ROT_SPEED * dt
+	// show_debug_message( "nah" )
+}
 
 // image_angle = targetRotation
 
