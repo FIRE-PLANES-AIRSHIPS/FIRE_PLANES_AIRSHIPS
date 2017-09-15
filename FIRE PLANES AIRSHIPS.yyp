@@ -159,6 +159,14 @@
             }
         },
         {
+            "Key": "6cce43cc-e8a4-4c6e-bcee-b9fb90764c48",
+            "Value": {
+                "id": "3c6e6077-9181-4186-857a-4419f12d11a7",
+                "resourcePath": "sprites\\s_Airship\\s_Airship.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "7281f99f-be05-482a-86cc-4bf2755e2918",
             "Value": {
                 "id": "f4c44370-ca1e-4d62-9238-ddacd12e5c9d",
@@ -180,6 +188,14 @@
                 "id": "f1afe303-6bbd-4dc1-8bc5-7f7846948087",
                 "resourcePath": "rooms\\r_Main\\r_Main.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "96c3277d-6849-4901-a828-96aeb486c555",
+            "Value": {
+                "id": "eb03f525-5cf1-47ee-bc76-f13642d73e8e",
+                "resourcePath": "objects\\o_Airship\\o_Airship.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -220,6 +236,14 @@
                 "id": "33aad8d7-4dec-4a9f-b612-faf1ed2b07fa",
                 "resourcePath": "views\\cfb7ce26-0414-4d73-b3e5-7827cde077df.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e6a40b3f-2294-4888-93d0-9a8fa10fed87",
+            "Value": {
+                "id": "01898297-bdb4-416c-9100-d616c536f5fd",
+                "resourcePath": "objects\\o_Map\\o_Map.yy",
+                "resourceType": "GMObject"
             }
         },
         {
