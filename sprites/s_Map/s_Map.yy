@@ -15,24 +15,24 @@
     "coltolerance": 0,
     "frames": [
         {
-            "id": "18d68137-10a6-4434-a7e0-abb6239d9ae1",
+            "id": "ff48330b-e7c1-415e-9db4-49da8f383e5c",
             "modelName": "GMSpriteFrame",
             "mvc": "1.0",
             "SpriteId": "6871699e-f26c-4e1c-9c5d-d2980060309d",
             "compositeImage": {
-                "id": "79ced6cd-3616-4d83-9501-525dec8c09e8",
+                "id": "c5487bf0-5019-4e23-95d3-a1bc8c534cce",
                 "modelName": "GMSpriteImage",
                 "mvc": "1.0",
-                "FrameId": "18d68137-10a6-4434-a7e0-abb6239d9ae1",
+                "FrameId": "ff48330b-e7c1-415e-9db4-49da8f383e5c",
                 "LayerId": "00000000-0000-0000-0000-000000000000"
             },
             "images": [
                 {
-                    "id": "fccec9fc-30cf-4fb3-b3b6-897eb26d3468",
+                    "id": "0a7d4a89-ecb4-485b-84c3-86b7056a86a8",
                     "modelName": "GMSpriteImage",
                     "mvc": "1.0",
-                    "FrameId": "18d68137-10a6-4434-a7e0-abb6239d9ae1",
-                    "LayerId": "d546fc2c-f118-490b-9b71-c493dbdb18ea"
+                    "FrameId": "ff48330b-e7c1-415e-9db4-49da8f383e5c",
+                    "LayerId": "eb58eb4f-003e-4137-84ad-040a7aa71d46"
                 }
             ]
         }
@@ -42,7 +42,7 @@
     "height": 4000,
     "layers": [
         {
-            "id": "d546fc2c-f118-490b-9b71-c493dbdb18ea",
+            "id": "eb58eb4f-003e-4137-84ad-040a7aa71d46",
             "modelName": "GMImageLayer",
             "mvc": "1.0",
             "SpriteId": "6871699e-f26c-4e1c-9c5d-d2980060309d",
@@ -53,7 +53,7 @@
             "visible": true
         }
     ],
-    "origin": 9,
+    "origin": 0,
     "playbackSpeed": 15,
     "playbackSpeedType": 0,
     "premultiplyAlpha": false,
@@ -63,6 +63,6 @@
     "textureGroupId": "1225f6b0-ac20-43bd-a82e-be73fa0b6f4f",
     "type": 0,
     "width": 6000,
-    "xorig": 6424,
-    "yorig": 1371
+    "xorig": 0,
+    "yorig": 0
 }
