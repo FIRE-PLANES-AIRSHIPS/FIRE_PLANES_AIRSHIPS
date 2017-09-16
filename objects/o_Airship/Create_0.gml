@@ -1,7 +1,7 @@
 /// @desc Initialize Variables
 SPEED = 0.56
 
-HP_MAX = 20
+HP_MAX = 50
 hp = HP_MAX
 
 dt = 0

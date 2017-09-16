@@ -13,7 +13,7 @@ var targetRotation = -darctan2( deltaX,deltaY )
 // if( targetRotation - image_angle > targetRotation + image_angle )
 // 	image_angle += 360
 
-show_debug_message( string( targetRotation ) + " " + string( image_angle ) )
+// show_debug_message( string( targetRotation ) + " " + string( image_angle ) )
 
 // Ensure the plane takes the shortest route turning.
 if( targetRotation > 160 && image_angle < -160 )
@@ -21,9 +21,6 @@ if( targetRotation > 160 && image_angle < -160 )
 
 if( targetRotation < -160 && image_angle > 160 )
 	image_angle *= -1
-
-// if( image_angle + 5 > -targetRotation && image_angle - 5 < -targetRotation )
-// 	image_angle = -image_angle
 
 if( image_angle < targetRotation )
 	image_angle += ROT_SPEED * dt
@@ -62,6 +59,12 @@ while( x < 1200 / 2 - offset )
 		with( damageNums[i] )
 			x += moveAmount
 	}
+	
+	for( var i = 0; i < array_length_1d( planes ); ++i )
+	{
+		with( planes[i] )
+			x += moveAmount
+	}
 }
 
 while( x > 1200 / 2 + offset )
@@ -78,6 +81,12 @@ while( x > 1200 / 2 + offset )
 	for( var i = 0; i < array_length_1d( damageNums ); ++i )
 	{
 		with( damageNums[i] )
+			x -= moveAmount
+	}
+	
+	for( var i = 0; i < array_length_1d( planes ); ++i )
+	{
+		with( planes[i] )
 			x -= moveAmount
 	}
 }
@@ -98,6 +107,12 @@ while( y < 800 / 2 - offset )
 		with( damageNums[i] )
 			y += moveAmount
 	}
+	
+	for( var i = 0; i < array_length_1d( planes ); ++i )
+	{
+		with( planes[i] )
+			y += moveAmount
+	}
 }
 
 while( y > 800 / 2 + offset )
@@ -114,6 +129,12 @@ while( y > 800 / 2 + offset )
 	for( var i = 0; i < array_length_1d( damageNums ); ++i )
 	{
 		with( damageNums[i] )
+			y -= moveAmount
+	}
+	
+	for( var i = 0; i < array_length_1d( planes ); ++i )
+	{
+		with( planes[i] )
 			y -= moveAmount
 	}
 }
@@ -135,6 +156,12 @@ while( inst_24B8CE13.x > 0 )
 		with( damageNums[i] )
 			x -= moveAmount
 	}
+	
+	for( var i = 0; i < array_length_1d( planes ); ++i )
+	{
+		with( planes[i] )
+			x -= moveAmount
+	}
 }
 
 while( inst_24B8CE13.x + 6000 < 1200 )
@@ -151,6 +178,12 @@ while( inst_24B8CE13.x + 6000 < 1200 )
 	for( var i = 0; i < array_length_1d( damageNums ); ++i )
 	{
 		with( damageNums[i] )
+			x += moveAmount
+	}
+	
+	for( var i = 0; i < array_length_1d( planes ); ++i )
+	{
+		with( planes[i] )
 			x += moveAmount
 	}
 }
@@ -171,6 +204,12 @@ while( inst_24B8CE13.y > 0 )
 		with( damageNums[i] )
 			y -= moveAmount
 	}
+	
+	for( var i = 0; i < array_length_1d( planes ); ++i )
+	{
+		with( planes[i] )
+			y -= moveAmount
+	}
 }
 
 while( inst_24B8CE13.y + 4000 < 800 )
@@ -189,14 +228,30 @@ while( inst_24B8CE13.y + 4000 < 800 )
 		with( damageNums[i] )
 			y += moveAmount
 	}
+	
+	for( var i = 0; i < array_length_1d( planes ); ++i )
+	{
+		with( planes[i] )
+			y += moveAmount
+	}
 }
 
-/// @desc Spawn Airships
+// Spawn Airships!
 if( airshipSpawnTimer > AIRSHIP_SPAWN_MAX )
 {
 	airshipSpawnTimer = 0
 	
-	airships[curAirship++] = instance_create_layer( 0,0,"Enemies",o_Airship )
+	// airships[curAirship++] = instance_create_layer( 0,0,"Enemies",o_Airship )
 }
 else
 	++airshipSpawnTimer
+
+// Spawn Planes!
+if( planeSpawnTimer > PLANE_SPAWN_MAX )
+{
+	planeSpawnTimer = 0
+	
+	planes[curPlane++] = instance_create_layer( 0,0,"Enemies",o_EnemyPlane )
+}
+else
+	++planeSpawnTimer
