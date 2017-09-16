@@ -1,9 +1,12 @@
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 4E888302
-/// @DnDArgument : "code" "/// @desc Initialize Variables$(13_10)SPEED = 0.56$(13_10)$(13_10)dt = 0"
+/// @DnDArgument : "code" "/// @desc Initialize Variables$(13_10)SPEED = 0.56$(13_10)$(13_10)HP_MAX = 20$(13_10)hp = HP_MAX$(13_10)$(13_10)dt = 0"
 /// @desc Initialize Variables
 SPEED = 0.56
+
+HP_MAX = 20
+hp = HP_MAX
 
 dt = 0
 
