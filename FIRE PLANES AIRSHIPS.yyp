@@ -63,6 +63,14 @@
             }
         },
         {
+            "Key": "35d2e384-9736-4011-a5c1-e88060cc9a1f",
+            "Value": {
+                "id": "278b19f1-7fda-4da5-a66d-934365bfc51e",
+                "resourcePath": "sprites\\s_BrokenAirship\\s_BrokenAirship.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "3c5b7e80-b7d4-43a2-8759-03b5cca6f41a",
             "Value": {
                 "id": "4a2a94dd-3d0a-4ab5-b437-cf061db1bd9b",
@@ -207,6 +215,14 @@
             }
         },
         {
+            "Key": "7fb6d234-be0c-4261-ad0c-29eb4014d358",
+            "Value": {
+                "id": "1ecc94b6-5d32-4a54-98c0-a70ab442bcba",
+                "resourcePath": "views\\7fb6d234-be0c-4261-ad0c-29eb4014d358.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "82c65c53-c191-4fc1-a086-b3ec6117357b",
             "Value": {
                 "id": "f1afe303-6bbd-4dc1-8bc5-7f7846948087",
@@ -236,6 +252,22 @@
                 "id": "710b04dd-c415-44b3-8648-01e6c072bfbc",
                 "resourcePath": "views\\ac0a6860-a6cd-4fb8-a833-29136c9d7875.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "b3fcd810-ae80-4c36-9ea6-f73565d46ba6",
+            "Value": {
+                "id": "75bc523d-ab23-4dbb-982e-0961f962087b",
+                "resourcePath": "rooms\\r_FrigidCavern\\r_FrigidCavern.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "b719f77d-75d4-4195-998f-93e01380134b",
+            "Value": {
+                "id": "a246483e-0a4f-40b2-9c64-10ec985d9661",
+                "resourcePath": "objects\\o_BrokenAirship\\o_BrokenAirship.yy",
+                "resourceType": "GMObject"
             }
         },
         {
