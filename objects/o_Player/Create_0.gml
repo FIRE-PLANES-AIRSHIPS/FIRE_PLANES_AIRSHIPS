@@ -32,3 +32,5 @@ HP_MAX = 20
 hp = HP_MAX
 
 canEnter = false
+
+mapName = inst_24B8CE13

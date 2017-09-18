@@ -1,4 +1,9 @@
-/// @desc Apply Movement
+if( room == 1 )
+	mapName = inst_24B8CE13
+else if( room == 2 )
+	mapName = inst_18057F1F
+
+// Apply Movement
 image_angle -= 180
 
 // Convert microseconds to something more reasonable. :)
@@ -16,17 +21,49 @@ var targetRotation = -darctan2( deltaX,deltaY )
 // show_debug_message( string( targetRotation ) + " " + string( image_angle ) )
 
 // Ensure the plane takes the shortest route turning.
+/*
 if( targetRotation > 160 && image_angle < -160 )
 	image_angle *= -1
 
 if( targetRotation < -160 && image_angle > 160 )
 	image_angle *= -1
+*/
 
-if( image_angle < targetRotation )
-	image_angle += ROT_SPEED * dt
+var goMinus = image_angle
+var goPlus = image_angle
 
-if( image_angle > targetRotation )
-	image_angle -= ROT_SPEED * dt
+var willGoMinus = 0
+var willGoPlus = 0
+
+while( goMinus != round( targetRotation ) )
+{
+	++willGoMinus
+	
+	if( goMinus < -180 )
+		goMinus = 180
+	else
+		--goMinus
+}
+
+while( goPlus != round( targetRotation ) )
+{
+	++willGoPlus
+	
+	if( goPlus > 180 )
+		goPlus = -180
+	else
+		++goPlus
+}
+
+{
+	if( image_angle < targetRotation )
+	// if( willGoPlus > willGoMinus )
+		image_angle += ROT_SPEED * dt
+	
+	if( image_angle > targetRotation )
+	// if( willGoPlus < willGoMinus )
+		image_angle -= ROT_SPEED * dt
+}
 
 // image_angle = targetRotation
 
@@ -46,7 +83,7 @@ var offset = 1
 while( x < 1200 / 2 - offset )
 {
 	x += moveAmount
-	inst_24B8CE13.x += moveAmount
+	mapName.x += moveAmount
 	
 	for( var i = 0; i < array_length_1d( airships ); ++i )
 	{
@@ -70,7 +107,7 @@ while( x < 1200 / 2 - offset )
 while( x > 1200 / 2 + offset )
 {
 	x -= moveAmount
-	inst_24B8CE13.x -= moveAmount
+	mapName.x -= moveAmount
 	
 	for( var i = 0; i < array_length_1d( airships ); ++i )
 	{
@@ -94,7 +131,7 @@ while( x > 1200 / 2 + offset )
 while( y < 800 / 2 - offset )
 {
 	y += moveAmount
-	inst_24B8CE13.y += moveAmount
+	mapName.y += moveAmount
 	
 	for( var i = 0; i < array_length_1d( airships ); ++i )
 	{
@@ -118,7 +155,7 @@ while( y < 800 / 2 - offset )
 while( y > 800 / 2 + offset )
 {
 	y -= moveAmount
-	inst_24B8CE13.y -= moveAmount
+	mapName.y -= moveAmount
 	
 	for( var i = 0; i < array_length_1d( airships ); ++i )
 	{
@@ -140,10 +177,10 @@ while( y > 800 / 2 + offset )
 }
 
 // Keep player within the map boundaries.
-while( inst_24B8CE13.x > 0 )
+while( mapName.x > 0 )
 {
 	x -= moveAmount
-	inst_24B8CE13.x -= moveAmount
+	mapName.x -= moveAmount
 	
 	for( var i = 0; i < array_length_1d( airships ); ++i )
 	{
@@ -164,10 +201,10 @@ while( inst_24B8CE13.x > 0 )
 	}
 }
 
-while( inst_24B8CE13.x + 6000 < 1200 )
+while( mapName.x + 6000 < 1200 )
 {
 	x += moveAmount
-	inst_24B8CE13.x += moveAmount
+	mapName.x += moveAmount
 	
 	for( var i = 0; i < array_length_1d( airships ); ++i )
 	{
@@ -188,10 +225,10 @@ while( inst_24B8CE13.x + 6000 < 1200 )
 	}
 }
 
-while( inst_24B8CE13.y > 0 )
+while( mapName.y > 0 )
 {
 	y -= moveAmount
-	inst_24B8CE13.y -= moveAmount
+	mapName.y -= moveAmount
 	
 	for( var i = 0; i < array_length_1d( airships ); ++i )
 	{
@@ -212,10 +249,10 @@ while( inst_24B8CE13.y > 0 )
 	}
 }
 
-while( inst_24B8CE13.y + 4000 < 800 )
+while( mapName.y + 4000 < 800 )
 {
 	y += moveAmount
-	inst_24B8CE13.y += moveAmount
+	mapName.y += moveAmount
 	
 	for( var i = 0; i < array_length_1d( airships ); ++i )
 	{
@@ -236,22 +273,52 @@ while( inst_24B8CE13.y + 4000 < 800 )
 	}
 }
 
-// Spawn Airships!
-if( airshipSpawnTimer > AIRSHIP_SPAWN_MAX )
-{
-	airshipSpawnTimer = 0
-	
-	// airships[curAirship++] = instance_create_layer( 0,0,"Enemies",o_Airship )
-}
-else
-	++airshipSpawnTimer
+// Keep player "on screen".
+while( x < 0 )
+	++x
 
-// Spawn Planes!
-if( planeSpawnTimer > PLANE_SPAWN_MAX )
+while( x > 1200 )
+	--x
+
+while( y < 0 )
+	++y
+
+while( y > 800 )
+	--y
+
+if( room == 1 )
 {
-	planeSpawnTimer = 0
+	// Spawn Airships!
+	if( airshipSpawnTimer > AIRSHIP_SPAWN_MAX )
+	{
+		airshipSpawnTimer = 0
+		
+		// airships[curAirship++] = instance_create_layer( 0,0,"Enemies",o_Airship )
+	}
+	else
+		++airshipSpawnTimer
 	
-	planes[curPlane++] = instance_create_layer( 0,0,"Enemies",o_EnemyPlane )
+	// Spawn Planes!
+	if( planeSpawnTimer > PLANE_SPAWN_MAX )
+	{
+		planeSpawnTimer = 0
+		
+		planes[curPlane++] = instance_create_layer( 0,0,"Enemies",o_EnemyPlane )
+	}
+	else
+		++planeSpawnTimer
+	
+	// Deal with invulnerability phase.
+	if( invulPhase <= INVUL_TIME )
+	{
+		++invulPhase
+		
+		if( invulPhase % 5 == 0 )
+			++image_index
+		
+		// show_debug_message( invulPhase )
+	}
 }
-else
-	++planeSpawnTimer
+
+image_blend = c_white
+canEnter = false

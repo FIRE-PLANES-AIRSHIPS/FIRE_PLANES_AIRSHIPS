@@ -1,18 +1,18 @@
 {
-    "id": "b719f77d-75d4-4195-998f-93e01380134b",
+    "id": "f7061a5b-d973-47df-b2f4-a588663ffe13",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "o_BrokenAirship",
+    "name": "o_MenuController",
     "eventList": [
         {
-            "id": "f2df497c-5799-437e-accc-3b227c4d1f21",
+            "id": "829af71c-b1a4-47dc-820f-c173a60d6111",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 8,
-            "m_owner": "b719f77d-75d4-4195-998f-93e01380134b"
+            "enumb": 50,
+            "eventtype": 6,
+            "m_owner": "f7061a5b-d973-47df-b2f4-a588663ffe13"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -31,6 +31,6 @@
     "physicsShapePoints": null,
     "physicsStartAwake": true,
     "solid": false,
-    "spriteId": "35d2e384-9736-4011-a5c1-e88060cc9a1f",
+    "spriteId": "100835c1-3533-45ca-9461-537185c274f9",
     "visible": true
 }

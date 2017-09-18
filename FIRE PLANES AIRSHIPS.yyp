@@ -31,11 +31,27 @@
     },
     "resources": [
         {
+            "Key": "0388e08a-9145-4a4c-b090-0527a0659d19",
+            "Value": {
+                "id": "c7f30b10-d205-4fe1-835d-d60e95d8c7bd",
+                "resourcePath": "fonts\\f_Main\\f_Main.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "0e7101ba-2dc7-458a-958a-7f4e6f97bee2",
             "Value": {
                 "id": "bf90ec88-e373-4f54-9e28-d520ba7fbf7c",
                 "resourcePath": "views\\0e7101ba-2dc7-458a-958a-7f4e6f97bee2.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "100835c1-3533-45ca-9461-537185c274f9",
+            "Value": {
+                "id": "5d1f6126-2e1b-4a5f-b432-5f4c48d33225",
+                "resourcePath": "sprites\\s_MenuController\\s_MenuController.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -247,6 +263,14 @@
             }
         },
         {
+            "Key": "aa91efef-563b-4bc3-817f-e714aae1ca21",
+            "Value": {
+                "id": "1edb118f-4d25-4a08-be15-ccd992b252fa",
+                "resourcePath": "rooms\\r_Menu\\r_Menu.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "ac0a6860-a6cd-4fb8-a833-29136c9d7875",
             "Value": {
                 "id": "710b04dd-c415-44b3-8648-01e6c072bfbc",
@@ -316,6 +340,14 @@
                 "id": "ead54bcb-58e6-4772-91e7-75d311680275",
                 "resourcePath": "options\\mac\\options_mac.yy",
                 "resourceType": "GMMacOptions"
+            }
+        },
+        {
+            "Key": "f7061a5b-d973-47df-b2f4-a588663ffe13",
+            "Value": {
+                "id": "57487ad9-f34c-4f67-8454-943755e70bbd",
+                "resourcePath": "objects\\o_MenuController\\o_MenuController.yy",
+                "resourceType": "GMObject"
             }
         },
         {
