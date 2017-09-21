@@ -34,3 +34,9 @@ hp = HP_MAX
 canEnter = false
 
 mapName = inst_24B8CE13
+
+audio_play_sound( a_Ambient,1,true )
+
+global.curScore = 15
+
+audio_master_gain( 0 )

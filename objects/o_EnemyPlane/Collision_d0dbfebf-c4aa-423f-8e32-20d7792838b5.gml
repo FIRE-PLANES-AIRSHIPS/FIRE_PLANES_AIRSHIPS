@@ -8,4 +8,7 @@ num.image_index = global.curDMG
 inst_66F0DA5F.damageNums[inst_66F0DA5F.curDamageNum++] = num
 
 if( hp < 1 )
+{
+	global.curScore += 5
 	instance_destroy()
+}

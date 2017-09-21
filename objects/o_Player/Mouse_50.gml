@@ -1,5 +1,7 @@
 if( shotTimer > SHOT_TIME )
 {
+	audio_play_sound( a_Bullet,0,false )
+	
 	shotTimer = 0
 	
 	if( weapon == 1 )
